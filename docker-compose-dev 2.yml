@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+    backendDev:
+        image: elektraverse/back
+        build: 
+            context: /server
+            dockerfile: Dockerfile
+        container_name: back_end_Dev
+        environment: 
+            - NODE_ENV=production
+        ports:
+            - "4000:4000"
+        # hot reloading
+        volumes:
+            - /usr/src/app/node_modules
+            - ./server/:/usr/src/app

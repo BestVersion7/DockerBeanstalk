@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+    backendProd:
+        image: elektraverse/back
+        build: 
+            context: /server
+            dockerfile: Dockerfile
+        container_name: back_end_Prod
+        environment: 
+            - NODE_ENV=production
+        ports:
+            - "4000:4000"
